@@ -2,7 +2,11 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>EXIF Heatmap</title>
+    <meta property="og:title" content="2017 NYC Trip Heatmap" />
+    <meta property="og:description" content="Heatmap of locations of photos taken in NYC." />
+    <meta property="og:image" content="img/heatmap.jpg" />
+
+    <title>2017 NYC Trip</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js"></script>
@@ -24,8 +28,8 @@
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/dark-v9',
-                center: [-74.0060, 40.7128],
-                zoom: 9
+                center: [-74.0060, 40.75],
+                zoom: 11
             });
 
             map.on('load', function () {
