@@ -1,4 +1,4 @@
-html/mapbox_api_key
+html/mapbox_token
 html/exif.geojson
 .env
 
