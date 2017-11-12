@@ -1,0 +1,20 @@
+﻿{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Thain Family Forest",
+        "description": "We stayed at an AirBnB near here.",
+        "icon": "marker"
+      },
+      "geometry": {
+        "coordinates": [
+          -73.8757,
+          40.8644
+        ],
+        "type": "Point"
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}

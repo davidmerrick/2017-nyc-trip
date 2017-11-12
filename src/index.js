@@ -14,6 +14,39 @@ map.on('load', function () {
         "data": "exif.geojson"
     });
 
+    map.addSource('points', {
+        "type": "geojson",
+        "data": "points.geojson"
+    });
+
+    map.addLayer({
+        "id": "points",
+        "type": "symbol",
+        "source": "points",
+        "layout": {
+            "icon-image": "{icon}-15",
+            "icon-size": 2
+        }
+    });
+
+    map.on('click', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+            layers: ["points"]
+        });
+
+        if (!features.length) {
+            return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+            .setLngLat(feature.geometry.coordinates)
+            .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+            .setLngLat(feature.geometry.coordinates)
+            .addTo(map);
+    });
+
     map.addLayer({
         "id": "exif-heat",
         "type": "heatmap",
